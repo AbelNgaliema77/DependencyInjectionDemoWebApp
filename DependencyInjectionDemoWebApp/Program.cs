@@ -2,7 +2,7 @@ using DependencyInjectionDemoWebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//registering the services to the container 
 builder.Services.AddTransient<ITransientService, TransientService>();
 builder.Services.AddScoped<IScopedService, ScopedService>();
 builder.Services.AddSingleton<ISingletonService, SingletonService>();
@@ -11,7 +11,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// configuring the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
