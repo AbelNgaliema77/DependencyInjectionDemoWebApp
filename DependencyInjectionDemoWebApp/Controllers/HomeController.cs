@@ -8,11 +8,13 @@ namespace DependencyInjectionDemoWebApp.Controllers
         private ISingletonService _singleton;
         private IScopedService _scoped;
         private ITransientService _transient;
-        public HomeController(ISingletonService singleton, IScopedService scoped, ITransientService transient)
+        private IMyService _myService;
+        public HomeController(ISingletonService singleton, IScopedService scoped, ITransientService transient, IMyService myService)
         {
             _singleton = singleton;
             _scoped = scoped;
             _transient = transient;
+            _myService = myService;
         }
 
         public IActionResult Index()
